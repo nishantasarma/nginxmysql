@@ -12,5 +12,5 @@
 
 `docker run --name web -d -p 8080:80 -v $(pwd)/default.conf:/etc/nginx/conf.d/default.conf -v $(pwd)/index.php:/var/www/html/index.php nginx`  
 `docker network connect frontend web`  
-`docker run --name --network=frontend sql -d -p 3306:3306 -e MYSQL_ROOT_PASSWORD=helloworld mysql:5.7.22`  
+`docker run --name sql --network=frontend -d -p 3306:3306 -e MYSQL_ROOT_PASSWORD=helloworld mysql:5.7.22`  
 
